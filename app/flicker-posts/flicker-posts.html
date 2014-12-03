@@ -1,0 +1,12 @@
+<div class="post" ng-repeat="post in flicker.posts">
+  <div class="image-container"><img ng-src="{{post.media.m}}"></img></div>
+  <div class="details-container">
+    <h1 class="title">{{post.title}}</h1>
+
+    <div class="details">
+      <div class="author"><a ng-href="https://www.flickr.com/photos/{{post.author_id}}/">Photo author</a></div>
+      <div class="published">Published: {{post.published | ordinalDate: "doo MMM yyyy 'at' h:mm"}}</div>
+      <div class="link"><a ng-href="{{post.link}}">View on Flickr</Fl></a></div>
+    </div>
+  </div>
+</div>

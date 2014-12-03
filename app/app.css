@@ -1,0 +1,57 @@
+/* app css stylesheet */
+
+h1 {
+  margin: 8px 0 4px;
+  line-height: 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.post {
+  overflow: hidden;
+}
+
+.post:nth-child(2n+1) {
+  background: #EEE;
+}
+
+.post .image-container {
+  width: 200px;
+  height: 125px;
+  float: left;
+  text-align: center;
+  overflow: hidden;
+}
+
+.post .image-container img {
+  max-height: 125px;
+}
+
+
+.post .details-container {
+  padding-left: 10px;
+  width: calc(100% - 210px);
+  float: left;
+}
+
+.post .details-container .details .author,
+.post .details-container .details .published,
+.post .details-container .details .link {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+@media (max-width: 800px) {
+  .post .details-container .details {
+    margin-top: 20px;
+    position: relative;
+  }
+
+  .post .details-container .details .published {
+    position: absolute;
+    display: block;
+    left: 0;
+    top: -20px;
+  }
+}
