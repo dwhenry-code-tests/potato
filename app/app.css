@@ -46,6 +46,7 @@
 h1 {
   border-bottom: solid 1px #333;
 }
+
 h2 {
   font-size: 2em;
   margin: 8px 0 4px;
@@ -55,17 +56,26 @@ h2 {
   text-overflow: ellipsis;
 }
 
-.post {
+.post-container {
   overflow: hidden;
 }
 
-.post:nth-child(2n+1) {
+.post-container:nth-child(2n+1) {
   background: #EEE;
 }
 
-.post .image-container {
+.author-and-published {
+  line-height: 2em;
+  margin-bottom: 1em;
+}
+
+.author-and-published .spacer {
+  margin: 0 10px;
+}
+
+.post-container .image-container,
+.flickr-post .image-container{
   width: 200px;
-  height: 125px;
   float: left;
   text-align: center;
   overflow: hidden;
@@ -73,50 +83,66 @@ h2 {
   box-sizing: border-box;
   background: #222;
   position: relative;
+  margin-right: 20px;
 }
 
-.post .image-container:hover {
+.post-container .image-container:hover {
   overflow: visible;
 }
 
-.post .image-container img {
+.post-container .image-container img {
   height: 125px;
 }
 
+.flickr-post .image-container img {
+  width: 200px;
+}
 
-.post .details-container {
-  padding-left: 10px;
-  width: calc(100% - 210px);
+
+.post-container .details-container,
+.flickr-post .details-container {
+  width: calc(100% - 220px);
   float: left;
 }
 
-.post .details-container .details .author,
-.post .details-container .details .published,
-.post .details-container .details .link {
+.post-container .details-container .details .author,
+.post-container .details-container .details .published,
+.post-container .details-container .details .link {
   display: inline-block;
   padding-right: 10px;
 }
 
+.tags {
+  margin-top: 20px;
+}
+
+.tags a {
+  margin-left: 20px
+}
+.tags a:first-child {
+  margin-left: 10px
+}
+
 @media (max-width: 800px) {
-  .post .details-container .details {
+  .post-container .details-container .details {
     margin-top: 1.5em;
     position: relative;
   }
 
-  .post .details-container .details .published {
+  .post-container .details-container .details .published {
     position: absolute;
     display: block;
     left: 0;
     top: -1.5em;
   }
 
-  .post .details-container * {
+  .post-container .details-container * {
     line-height: 1.5em;
   }
 
 }
 @media (min-width: 801px) {
-  .post .details-container * {
+  .post-container .details-container * {
     line-height: 2em;
   }
 }

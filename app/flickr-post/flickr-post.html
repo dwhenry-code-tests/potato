@@ -1,24 +1,37 @@
-<div class="right">
-  <div class="arrow">
-    <div class="head">
-    </div>
-    <div class="body">
-      <a ng-href="#/flickr-posts">Back</a>
+<div class="flickr-post">
+  <div class="right">
+    <div class="arrow">
+      <div class="head">
+      </div>
+      <div class="body">
+        <a ng-href="#/flickr-posts">Back</a>
+      </div>
     </div>
   </div>
-</div>
-<a ng-href="{{flickr.post.link}}">
-  <h2 class="title">{{flickr.post.title}}</h2>
-</a>
 
-<span class="author"><a ng-href="https://www.flickr.com/photos/{{flickr.post.author_id}}/">Photo author</a></span>
-  |
-<span class="published">Published: {{flickr.post.published | ordinalDate: "doo MMM yyyy 'at' h:mm"}}</span>
 
-<div class="image-container" ><img ng-src="{{flickr.post.media.m}}" /></div>
-<div class="details-container">
+  <h2 class="title">
+    <a ng-href="{{flickr.post.link}}">{{flickr.post.title}}</a>
+  </h2>
 
-  <div class="details">
-    {{flickr.post}}
+
+
+  <div class="author-and-published">
+    <span class="author"><a ng-href="https://www.flickr.com/photos/{{flickr.post.author_id}}/">Photo author</a></span>
+    <span class="spacer">|</span>
+    <span class="published">Published: {{flickr.post.published | ordinalDate: "doo MMM yyyy 'at' h:mm"}}</span>
   </div>
-</div>
+
+  <div class="image-container" ><img ng-src="{{flickr.post.media.m}}" /></div>
+  <div class="details-container">
+    <div class="details">
+      {{flickr.post}}
+    </div>
+
+    <div class="tags">
+      Tags:
+      <a ng-repeat="tag in flickr.post.tags.split(' ')" ng-href="#/flickr-posts?tag={{tag}}">{{tag}}</a>
+    </div>
+  </div>
+
+  </div>

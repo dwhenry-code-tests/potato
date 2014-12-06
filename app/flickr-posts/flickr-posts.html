@@ -1,12 +1,14 @@
-<div class="post" ng-repeat="post in flickr.posts">
-  <a class="image-container" ng-href="#/flickr-posts/{{$index}}"><img ng-src="{{post.media.m}}" /></a>
-  <div class="details-container">
-    <h2 class="title">{{post.title}}</h2>
+<div class="flickr-posts">
+  <div class="post-container" ng-repeat="post in flickr.posts">
+    <a class="image-container" ng-href="#/flickr-posts/{{$index}}"><img ng-src="{{post.media.m}}" /></a>
+    <div class="details-container">
+      <h2 class="title">{{post.title}}</h2>
 
-    <div class="details">
-      <div class="author"><a ng-href="https://www.flickr.com/photos/{{post.author_id}}/">Photo author</a></div>
-      <div class="published">Published: {{post.published | ordinalDate: "doo MMM yyyy 'at' h:mm"}}</div>
-      <div class="link"><a ng-href="{{post.link}}">View on Flickr</Fl></a></div>
+      <div class="details">
+        <div class="author"><a ng-href="https://www.flickr.com/photos/{{post.author_id}}/">Photo author</a></div>
+        <div class="published">Published: {{post.published | ordinalDate: "doo MMM yyyy 'at' h:mm"}}</div>
+        <div class="link"><a ng-href="{{post.link}}">View on Flickr</Fl></a></div>
+      </div>
     </div>
   </div>
 </div>
