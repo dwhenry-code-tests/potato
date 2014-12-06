@@ -8,13 +8,15 @@ angular.module('demo.flickr', ['ngResource'])
     var posts = [];
 
 
-    var postsPromise;
+    var postsPromise, lastTagSearch;
     this.loadPosts = function(tag) {
       tag = tag || 'potato';
-      if(posts) {
-        $q.when(posts)
+      if(posts && lastTagSearch === tag) {
+        return $q.when(posts)
       }
-      return postsPromise = postsPromise || $http.
+
+      lastTagSearch = tag;
+      return $http.
         jsonp(
         host + '/services/feeds/photos_public.gne?jsoncallback=JSON_CALLBACK&tags=' + tag + '&tagmode=all&format=json#'
       ).
