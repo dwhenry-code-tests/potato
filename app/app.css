@@ -71,10 +71,16 @@ h2 {
   overflow: hidden;
   border: solid 1px black;
   box-sizing: border-box;
+  background: #222;
+  position: relative;
+}
+
+.post .image-container:hover {
+  overflow: visible;
 }
 
 .post .image-container img {
-  max-height: 125px;
+  height: 125px;
 }
 
 
