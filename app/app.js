@@ -6,6 +6,7 @@ angular.module('demo', [
   'demo.FlickrPost',
   'demo.FlickrPosts',
   'demo.flickr',
+  'demo.Search',
   'demo.ordinalDate'
 ]).
 config(['$routeProvider', function($routeProvider) {

@@ -10,10 +10,11 @@ angular.module('demo.FlickrPosts', ['ngRoute'])
     });
   }])
 
-  .controller('FlickrPostsCtrl', ['flickr', function(flickr) {
+  .controller('FlickrPostsCtrl', ['$route', 'flickr', function($route, flickr) {
     var ctl = this;
 
-    flickr.loadPosts().then(function(posts) {
+    var tag = $route.current.params.tag;
+    flickr.loadPosts(tag).then(function(posts) {
       ctl.posts = posts;
     });
   }]);

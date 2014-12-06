@@ -159,3 +159,14 @@ h2 {
     line-height: 2em;
   }
 }
+
+/* searchform */
+.search-form {
+  padding: 10px 0;
+  margin-bottom: 10px;
+  background: #eee
+}
+
+.search-form input {
+  padding: 2px 5px;
+}

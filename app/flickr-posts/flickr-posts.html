@@ -1,4 +1,6 @@
 <div class="flickr-posts">
+  <demo-search default="potato" name="tag">Enter tag name to search:</demo-search>
+
   <div class="post-container" ng-repeat="post in flickr.posts">
     <a class="image-container" ng-href="#/flickr-posts/{{$index}}"><img ng-src="{{post.media.m}}" /></a>
     <div class="details-container">
