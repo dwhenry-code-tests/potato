@@ -4,20 +4,23 @@ angular.module('demo.flicker', ['ngResource'])
 
   .value('flicker-host', 'http://api.flickr.com')
 
-  .service('flicker', ['$http', 'flicker-host', function($http, host) {
+  .service('flicker', ['$http', '$q', 'flicker-host', function($http, $q, host) {
     var posts = [];
 
 
+    var postsPromise;
     this.loadPosts = function() {
-      $http.
+      if(posts) {
+        $q.when(posts)
+      }
+      return postsPromise = postsPromise || $http.
         jsonp(
-          host + '/services/feeds/photos_public.gne?jsoncallback=JSON_CALLBACK&tags=potato&tagmode=all&format=json#'
-        ).
+        host + '/services/feeds/photos_public.gne?jsoncallback=JSON_CALLBACK&tags=potato&tagmode=all&format=json#'
+      ).
         then(function(response) {
-          posts.length = 0;
-          [].push.apply(posts, response.data.items);
+          return posts = response.data.items;
         });
-      return posts;
     };
+
 
   }]);

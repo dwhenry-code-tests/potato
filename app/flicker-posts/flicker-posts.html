@@ -1,7 +1,7 @@
 <div class="post" ng-repeat="post in flicker.posts">
-  <div class="image-container"><img ng-src="{{post.media.m}}"></img></div>
+  <a class="image-container" ng-href="#/flicker-posts/{{$index}}"><img ng-src="{{post.media.m}}" /></a>
   <div class="details-container">
-    <h1 class="title">{{post.title}}</h1>
+    <h2 class="title">{{post.title}}</h2>
 
     <div class="details">
       <div class="author"><a ng-href="https://www.flickr.com/photos/{{post.author_id}}/">Photo author</a></div>

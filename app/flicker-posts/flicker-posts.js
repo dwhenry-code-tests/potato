@@ -11,5 +11,9 @@ angular.module('demo.FlickerPosts', ['ngRoute'])
   }])
 
   .controller('FlickerPostsCtrl', ['flicker', function(flicker) {
-    this.posts = flicker.loadPosts();
+    var ctl = this;
+
+    flicker.loadPosts().then(function(posts) {
+      ctl.posts = posts;
+    });
   }]);
