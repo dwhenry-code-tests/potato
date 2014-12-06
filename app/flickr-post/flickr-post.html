@@ -24,13 +24,17 @@
 
   <div class="image-container" ><img ng-src="{{flickr.post.media.m}}" /></div>
   <div class="details-container">
-    <div class="details">
-      {{flickr.post}}
-    </div>
+    <pre class="details">{{flickr.post | json}}</pre>
 
     <div class="tags">
-      Tags:
-      <a ng-repeat="tag in flickr.post.tags.split(' ')" ng-href="#/flickr-posts?tag={{tag}}">{{tag}}</a>
+      <div class="title">
+        Tags:
+      </div>
+      <div class="tag-container">
+        <span ng-repeat="tag in flickr.post.tags.split(' ')">
+          <a ng-href="#/flickr-posts?tag={{tag}}">{{tag}}</a>
+        </span>
+      </div>
     </div>
   </div>
 
