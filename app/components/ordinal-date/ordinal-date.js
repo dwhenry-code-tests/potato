@@ -7,6 +7,7 @@ angular.module('demo.ordinalDate', [])
     var suffixes = ["th", "st", "nd", "rd"];
     return function(input, format) {
       var dateWithoutOrdinal = $filter('date')(input, format);
+      if(!dateWithoutOrdinal) { return ''; }
 
       var day = parseInt($filter('date')(input, 'dd'));
       var relevantDigits = (day < 30) ? day % 20 : day % 10;
