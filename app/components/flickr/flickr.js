@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('demo.flicker', ['ngResource'])
+angular.module('demo.flickr', ['ngResource'])
 
-  .value('flicker-host', 'http://api.flickr.com')
+  .value('flickr-host', 'http://api.flickr.com')
 
-  .service('flicker', ['$http', '$q', 'flicker-host', function($http, $q, host) {
+  .service('flickr', ['$http', '$q', 'flickr-host', function($http, $q, host) {
     var posts = [];
 
 
