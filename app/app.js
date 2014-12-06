@@ -3,6 +3,7 @@
 // Declare app level module which depends on views, and components
 angular.module('demo', [
   'ngRoute',
+  'demo.FlickerPost',
   'demo.FlickerPosts',
   'demo.flicker',
   'demo.ordinalDate'
